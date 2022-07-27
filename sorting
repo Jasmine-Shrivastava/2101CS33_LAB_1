@@ -168,6 +168,9 @@ int main()
         case 1:
         insertionSort(a,n);
         break;
+        case 2:
+        selectionSort(a,n);
+        break;
         default:
         
     printf("not sorted\n");
