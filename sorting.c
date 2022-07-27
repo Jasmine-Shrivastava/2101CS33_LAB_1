@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-
+void swap(int *a, int *b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
 
 void insertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
@@ -32,7 +36,24 @@ void selectionSort(int arr[], int n) {
     }
 }
 
-
+void bubbleSort (int arr[], int n) 
+{
+    for ( int i=0; i<=n-1;i++)// N elements => (N-1) pass
+    {
+    
+        int flag =0;
+        for ( int j=0;j<=n-1;j++ )// Execute the pass
+        {
+            if ( arr [j] > arr[j+1] )
+            { 
+                swap( &arr[j], &arr[j+1] );
+                flag=1;
+            }
+        }
+        if (flag=0) // exit the loop
+            break;
+    }
+}
 
 
 int main()
@@ -54,6 +75,8 @@ int main()
          case 2:
         selectionSort(a,n);
         break;
+        case 3:
+        bubbleSort(a,n);
         default:
         
     printf("not sorted\n");
